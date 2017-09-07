@@ -11,9 +11,10 @@
 #import "LoadEmojTool.h"
 #import "EmotionModel.h"
 #import <objc/runtime.h>
+#import "PlaceHolderTextView.h"
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet PlaceHolderTextView *textView;
 @property (strong, nonatomic) EmotionParentView *emotionView;
 
 @end
@@ -34,24 +35,15 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deleteEmotion:) name:NSNoteficationDeleteEmotion object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:NULL];
     //[self testRuntime];
-}
-
-- (void)testRuntime {
-    unsigned int outCount = 0;
-    Ivar *ivarList = class_copyIvarList([UISegmentedControl class], &outCount);
-    for (int i = 0; i < outCount; i++) {
-         Ivar ivar = ivarList[i];
-         const char *cName = ivar_getName(ivar);
-         NSString *ocName = [[NSString alloc] initWithUTF8String:cName];
-         const char *cType = ivar_getTypeEncoding(ivar);
-         NSString *ocType = [[NSString alloc] initWithUTF8String:cType];
-        NSLog(@"%@---%@",ocName,ocType);
-    }
-    //CFRelease(ivarList);//_currentPageImage  _pageImage
+    self.textView.placeholderTextBlock(@"我是占位文字").placeholderColorBlock([UIColor yellowColor]);
+    self.textView.tintColor = [UIColor redColor];//修改光标的颜色
+    
 }
 
 #pragma mark - 选中与删除表情
 - (void)selectedEmotion:(NSNotification *)note {
+//    EmotionModel *emotion = (EmotionModel *)(note.object);
+//    [self.textView insertText:emotion.chs];
     //1.拼接表情
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithAttributedString:self.textView.attributedText];
     EmotionModel *emotion = (EmotionModel *)(note.object);
@@ -109,4 +101,19 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+
+#pragma mark - 运行时获得类的实例变量
+- (void)testRuntime {
+    unsigned int outCount = 0;
+    Ivar *ivarList = class_copyIvarList([UISegmentedControl class], &outCount);
+    for (int i = 0; i < outCount; i++) {
+        Ivar ivar = ivarList[i];
+        const char *cName = ivar_getName(ivar);
+        NSString *ocName = [[NSString alloc] initWithUTF8String:cName];
+        const char *cType = ivar_getTypeEncoding(ivar);
+        NSString *ocType = [[NSString alloc] initWithUTF8String:cType];
+        NSLog(@"%@---%@",ocName,ocType);
+    }
+    //CFRelease(ivarList);//_currentPageImage  _pageImage
+}
 @end

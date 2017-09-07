@@ -19,7 +19,9 @@
 		F6094AA61F5D4E990078A152 /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = F6094AA51F5D4E990078A152 /* NSString+Emoji.m */; };
 		F6195C4D1F5F956200ECF1DA /* LvEmotionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F6195C4C1F5F956200ECF1DA /* LvEmotionButton.m */; };
 		F6195C501F5FD94500ECF1DA /* EmotionListView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6195C4F1F5FD94500ECF1DA /* EmotionListView.m */; };
-		F6195C531F5FF11000ECF1DA /* LvMagnifierWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F6195C521F5FF11000ECF1DA /* LvMagnifierWindow.m */; };
+		F61A93F11F6113A200072967 /* LvChatToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F61A93EE1F6113A200072967 /* LvChatToolBar.m */; };
+		F61A93F21F6113A200072967 /* LvMagnifierWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F61A93F01F6113A200072967 /* LvMagnifierWindow.m */; };
+		F61A93F51F61140500072967 /* PlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F61A93F41F61140500072967 /* PlaceHolderTextView.m */; };
 		F646A1331F5D3ABC00A26812 /* EmotionParentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F646A1301F5D3ABC00A26812 /* EmotionParentView.m */; };
 		F646A1341F5D3ABC00A26812 /* EmotionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F646A1321F5D3ABC00A26812 /* EmotionView.m */; };
 		F646A2191F5D3ACB00A26812 /* d_aini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F646A1371F5D3ACB00A26812 /* d_aini@2x.png */; };
@@ -246,7 +248,6 @@
 		F646A2F61F5D3ACB00A26812 /* lxh_zhuanfa.gif in Resources */ = {isa = PBXBuildFile; fileRef = F646A2161F5D3ACB00A26812 /* lxh_zhuanfa.gif */; };
 		F646A2F71F5D3ACB00A26812 /* lxh_zhuanfa.png in Resources */ = {isa = PBXBuildFile; fileRef = F646A2171F5D3ACB00A26812 /* lxh_zhuanfa.png */; };
 		F646A2F81F5D3ACB00A26812 /* lxh_zhuanfa@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F646A2181F5D3ACB00A26812 /* lxh_zhuanfa@2x.png */; };
-		F674B7E61F5E35250026DC81 /* LvChatToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F674B7E51F5E35250026DC81 /* LvChatToolBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -273,8 +274,12 @@
 		F6195C4C1F5F956200ECF1DA /* LvEmotionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LvEmotionButton.m; sourceTree = "<group>"; };
 		F6195C4E1F5FD94500ECF1DA /* EmotionListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionListView.h; sourceTree = "<group>"; };
 		F6195C4F1F5FD94500ECF1DA /* EmotionListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionListView.m; sourceTree = "<group>"; };
-		F6195C511F5FF11000ECF1DA /* LvMagnifierWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LvMagnifierWindow.h; path = LoadEmotionDirTool/LvMagnifierWindow.h; sourceTree = "<group>"; };
-		F6195C521F5FF11000ECF1DA /* LvMagnifierWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LvMagnifierWindow.m; path = LoadEmotionDirTool/LvMagnifierWindow.m; sourceTree = "<group>"; };
+		F61A93ED1F6113A200072967 /* LvChatToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LvChatToolBar.h; sourceTree = "<group>"; };
+		F61A93EE1F6113A200072967 /* LvChatToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LvChatToolBar.m; sourceTree = "<group>"; };
+		F61A93EF1F6113A200072967 /* LvMagnifierWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LvMagnifierWindow.h; sourceTree = "<group>"; };
+		F61A93F01F6113A200072967 /* LvMagnifierWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LvMagnifierWindow.m; sourceTree = "<group>"; };
+		F61A93F31F61140500072967 /* PlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceHolderTextView.h; sourceTree = "<group>"; };
+		F61A93F41F61140500072967 /* PlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceHolderTextView.m; sourceTree = "<group>"; };
 		F646A12F1F5D3ABC00A26812 /* EmotionParentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionParentView.h; sourceTree = "<group>"; };
 		F646A1301F5D3ABC00A26812 /* EmotionParentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionParentView.m; sourceTree = "<group>"; };
 		F646A1311F5D3ABC00A26812 /* EmotionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionView.h; sourceTree = "<group>"; };
@@ -503,8 +508,6 @@
 		F646A2161F5D3ACB00A26812 /* lxh_zhuanfa.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lxh_zhuanfa.gif; sourceTree = "<group>"; };
 		F646A2171F5D3ACB00A26812 /* lxh_zhuanfa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lxh_zhuanfa.png; sourceTree = "<group>"; };
 		F646A2181F5D3ACB00A26812 /* lxh_zhuanfa@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lxh_zhuanfa@2x.png"; sourceTree = "<group>"; };
-		F674B7E41F5E35250026DC81 /* LvChatToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LvChatToolBar.h; sourceTree = "<group>"; };
-		F674B7E51F5E35250026DC81 /* LvChatToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LvChatToolBar.m; sourceTree = "<group>"; };
 		F8E2365A2BF2ECF7CD8D06A2 /* Pods-keyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-keyboard/Pods-keyboard.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -558,6 +561,7 @@
 		F601EB501F42EB380071F66B /* keyboard */ = {
 			isa = PBXGroup;
 			children = (
+				F61A93EC1F61131900072967 /* CustomView */,
 				F6094AA01F5D41BB0078A152 /* Model */,
 				F6094A9A1F5D3D140078A152 /* Tool */,
 				F646A12E1F5D3ABC00A26812 /* GridView */,
@@ -588,10 +592,6 @@
 			isa = PBXGroup;
 			children = (
 				F6094A9B1F5D3D140078A152 /* LoadEmotionDirTool */,
-				F674B7E41F5E35250026DC81 /* LvChatToolBar.h */,
-				F674B7E51F5E35250026DC81 /* LvChatToolBar.m */,
-				F6195C511F5FF11000ECF1DA /* LvMagnifierWindow.h */,
-				F6195C521F5FF11000ECF1DA /* LvMagnifierWindow.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -614,6 +614,19 @@
 				F6094AA21F5D41CA0078A152 /* EmotionModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F61A93EC1F61131900072967 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				F61A93ED1F6113A200072967 /* LvChatToolBar.h */,
+				F61A93EE1F6113A200072967 /* LvChatToolBar.m */,
+				F61A93EF1F6113A200072967 /* LvMagnifierWindow.h */,
+				F61A93F01F6113A200072967 /* LvMagnifierWindow.m */,
+				F61A93F31F61140500072967 /* PlaceHolderTextView.h */,
+				F61A93F41F61140500072967 /* PlaceHolderTextView.m */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		F646A12E1F5D3ABC00A26812 /* GridView */ = {
@@ -1235,11 +1248,12 @@
 				F6195C501F5FD94500ECF1DA /* EmotionListView.m in Sources */,
 				F646A1341F5D3ABC00A26812 /* EmotionView.m in Sources */,
 				F6195C4D1F5F956200ECF1DA /* LvEmotionButton.m in Sources */,
-				F674B7E61F5E35250026DC81 /* LvChatToolBar.m in Sources */,
 				F601EB591F42EB380071F66B /* ViewController.m in Sources */,
 				F6094AA61F5D4E990078A152 /* NSString+Emoji.m in Sources */,
-				F6195C531F5FF11000ECF1DA /* LvMagnifierWindow.m in Sources */,
+				F61A93F51F61140500072967 /* PlaceHolderTextView.m in Sources */,
 				F6094A9E1F5D3D270078A152 /* LoadEmojTool.m in Sources */,
+				F61A93F21F6113A200072967 /* LvMagnifierWindow.m in Sources */,
+				F61A93F11F6113A200072967 /* LvChatToolBar.m in Sources */,
 				F6094AA31F5D41CA0078A152 /* EmotionModel.m in Sources */,
 				F601EB561F42EB380071F66B /* AppDelegate.m in Sources */,
 				F646A1331F5D3ABC00A26812 /* EmotionParentView.m in Sources */,

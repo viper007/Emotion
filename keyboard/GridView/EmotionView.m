@@ -109,19 +109,33 @@
 - (void)longPressState:(UILongPressGestureRecognizer *)longPress {
     //
     if (longPress.state == UIGestureRecognizerStateEnded) {
-        
+        CGPoint point = [longPress locationInView:self];
+        LvEmotionButton *emotionButton = [self emotionWithPoint:point];
+        if (emotionButton) {
+            [self buttonClick:emotionButton];
+        }else {
+            [self.magnifierView dismiss];
+        }
     }else {
         CGPoint point = [longPress locationInView:self];
-        [self.subviews enumerateObjectsUsingBlock:^(UIButton * obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if (CGRectContainsPoint(obj.frame, point)) {
-                //显示对应的弹窗
-                NSLog(@"%@",obj.currentTitle);
-            }
-        }];
+        LvEmotionButton *emotionButton = [self emotionWithPoint:point];
+        [self.magnifierView showEmotion:emotionButton];
     }
 }
 
-
+#pragma mark -
+- (LvEmotionButton *)emotionWithPoint:(CGPoint)point {
+    __block LvEmotionButton *emotionButton = nil;
+    
+    [self.buttonsArray enumerateObjectsUsingBlock:^(LvEmotionButton * obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (CGRectContainsPoint(obj.frame, point)) {
+            //显示对应的弹窗
+            emotionButton = obj;
+            *stop = YES;
+        }
+    }];
+    return emotionButton;
+}
 #pragma mark - 另外的方式
 //- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
 //    UITouch *touch = [touches anyObject];
