@@ -38,6 +38,10 @@
     self.textView.placeholderTextBlock(@"我是占位文字").placeholderColorBlock([UIColor yellowColor]);
     self.textView.tintColor = [UIColor redColor];//修改光标的颜色
     
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue addOperationWithBlock:^{
+        [self emotionView];
+    }];
 }
 
 #pragma mark - 选中与删除表情
