@@ -17,9 +17,21 @@
 @property (weak, nonatomic) IBOutlet PlaceHolderTextView *textView;
 @property (strong, nonatomic) EmotionParentView *emotionView;
 
+@property (strong ,nonatomic) UIToolbar *accessView;
 @end
 
 @implementation ViewController
+
+- (UIToolbar *)accessView {
+    if (!_accessView) {
+        _accessView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 80)];
+        _accessView.opaque = NO;
+        _accessView.barStyle = UIBarStyleDefault;
+        _accessView.backgroundColor = [UIColor redColor];
+        _accessView.clearsContextBeforeDrawing = YES;
+    }
+    return _accessView;
+}
 
 - (EmotionParentView *)emotionView {
     if (!_emotionView) {
@@ -37,7 +49,8 @@
     //[self testRuntime];
     self.textView.placeholderTextBlock(@"我是占位文字").placeholderColorBlock([UIColor yellowColor]);
     self.textView.tintColor = [UIColor redColor];//修改光标的颜色
-    
+    //self.textView.inputAccessoryView = self.accessView;
+    //创建一个异步线程提前去绘制键盘信息,
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     [queue addOperationWithBlock:^{
         [self emotionView];

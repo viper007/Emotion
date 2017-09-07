@@ -54,6 +54,7 @@
 - (void)textDidChange:(NSNotification *)note {
     [self setNeedsDisplay];
 }
+
 #pragma mark - 重写父类的方法
 - (void)setText:(NSString *)text {
     [super setText:text];
