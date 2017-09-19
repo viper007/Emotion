@@ -56,7 +56,6 @@
 
 #pragma mark - Outside Method
 
-
 #pragma mark - toolbar delegate
 - (void)chatToolBar:(LvChatToolBar *)toolBar clickButtonType:(EmotionType)emotionType {
     switch (emotionType) {

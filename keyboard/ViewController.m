@@ -11,13 +11,15 @@
 #import "LoadEmojTool.h"
 #import "EmotionModel.h"
 #import <objc/runtime.h>
-#import "PlaceHolderTextView.h"
+#import "EmojiTextView.h"
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet PlaceHolderTextView *textView;
+@property (weak, nonatomic) IBOutlet EmojiTextView *textView;
 @property (strong, nonatomic) EmotionParentView *emotionView;
 
 @property (strong ,nonatomic) UIToolbar *accessView;
+
+@property (nonatomic ,copy) NSString *totalString;//继续当前的文本对应的字符串
 @end
 
 @implementation ViewController
@@ -40,6 +42,7 @@
     }
     return _emotionView;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     //
@@ -50,35 +53,14 @@
     self.textView.placeholderTextBlock(@"我是占位文字").placeholderColorBlock([UIColor yellowColor]);
     self.textView.tintColor = [UIColor redColor];//修改光标的颜色
     //self.textView.inputAccessoryView = self.accessView;
-    //创建一个异步线程提前去绘制键盘信息,
-    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-    [queue addOperationWithBlock:^{
-        [self emotionView];
-    }];
+    
+    [self emotionView];//需要在主线程去更新UI
 }
 
 #pragma mark - 选中与删除表情
 - (void)selectedEmotion:(NSNotification *)note {
-//    EmotionModel *emotion = (EmotionModel *)(note.object);
-//    [self.textView insertText:emotion.chs];
-    //1.拼接表情
-    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithAttributedString:self.textView.attributedText];
     EmotionModel *emotion = (EmotionModel *)(note.object);
-    if (emotion.code) {//说明是emoji直接拼接
-        [text insertAttributedString:[[NSAttributedString alloc] initWithString:emotion.emoj] atIndex:self.textView.selectedRange.location];
-    }else {//说明是其他的内容不可以直接拼接
-        NSTextAttachment *textAttachment = [[NSTextAttachment alloc] init];
-        NSString *fileName = [NSString stringWithFormat:@"%@%@",emotion.direc,emotion.png];
-        textAttachment.image = [UIImage imageWithContentsOfFile:fileName];
-        textAttachment.bounds = CGRectMake(0, -3, self.textView.font.lineHeight, self.textView.font.lineHeight);
-        NSAttributedString *attributedText = [NSAttributedString attributedStringWithAttachment:textAttachment];
-        [text insertAttributedString:attributedText atIndex:self.textView.selectedRange.location];
-    }
-    [text addAttribute:NSFontAttributeName value:self.textView.font range:NSMakeRange(0, text.length)];
-    NSRange selectedRange = NSMakeRange(self.textView.selectedRange.location+1, self.textView.selectedRange.length);
-    self.textView.attributedText = text;
-    self.textView.selectedRange = selectedRange;
-    //发送出去的消息是对应的
+    self.textView.emotionModel = emotion;
 }
 - (void)deleteEmotion:(NSNotification *)note {
     [self.textView deleteBackward];

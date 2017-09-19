@@ -12,4 +12,5 @@
 
 @property (nonatomic ,strong) PlaceHolderTextView *(^placeholderColorBlock) (UIColor *placeholderColor);
 @property (nonatomic ,strong) PlaceHolderTextView *(^placeholderTextBlock) (NSString *text);
+
 @end
