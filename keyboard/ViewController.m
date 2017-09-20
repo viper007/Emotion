@@ -13,7 +13,7 @@
 #import <objc/runtime.h>
 #import "EmojiTextView.h"
 @interface ViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *realTextLabel;
 @property (weak, nonatomic) IBOutlet EmojiTextView *textView;
 @property (strong, nonatomic) EmotionParentView *emotionView;
 
@@ -64,6 +64,11 @@
 }
 - (void)deleteEmotion:(NSNotification *)note {
     [self.textView deleteBackward];
+}
+
+#pragma mark - 获取发送文本型
+- (IBAction)getServerText {
+    self.realTextLabel.text = self.textView.realText;
 }
 #pragma mark - keyboard Notification
 - (void)keyboardDidChangeFrame:(NSNotification *)note {

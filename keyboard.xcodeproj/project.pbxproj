@@ -248,6 +248,7 @@
 		F646A2F61F5D3ACB00A26812 /* lxh_zhuanfa.gif in Resources */ = {isa = PBXBuildFile; fileRef = F646A2161F5D3ACB00A26812 /* lxh_zhuanfa.gif */; };
 		F646A2F71F5D3ACB00A26812 /* lxh_zhuanfa.png in Resources */ = {isa = PBXBuildFile; fileRef = F646A2171F5D3ACB00A26812 /* lxh_zhuanfa.png */; };
 		F646A2F81F5D3ACB00A26812 /* lxh_zhuanfa@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F646A2181F5D3ACB00A26812 /* lxh_zhuanfa@2x.png */; };
+		F6622B2B1F72069300BD2B91 /* LvTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = F6622B2A1F72069300BD2B91 /* LvTextAttachment.m */; };
 		F6FDF5411F7116D400F6943A /* EmojiTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FDF5401F7116D400F6943A /* EmojiTextView.m */; };
 /* End PBXBuildFile section */
 
@@ -509,6 +510,8 @@
 		F646A2161F5D3ACB00A26812 /* lxh_zhuanfa.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lxh_zhuanfa.gif; sourceTree = "<group>"; };
 		F646A2171F5D3ACB00A26812 /* lxh_zhuanfa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lxh_zhuanfa.png; sourceTree = "<group>"; };
 		F646A2181F5D3ACB00A26812 /* lxh_zhuanfa@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lxh_zhuanfa@2x.png"; sourceTree = "<group>"; };
+		F6622B291F72069300BD2B91 /* LvTextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LvTextAttachment.h; sourceTree = "<group>"; };
+		F6622B2A1F72069300BD2B91 /* LvTextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LvTextAttachment.m; sourceTree = "<group>"; };
 		F6FDF53F1F7116D400F6943A /* EmojiTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmojiTextView.h; sourceTree = "<group>"; };
 		F6FDF5401F7116D400F6943A /* EmojiTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmojiTextView.m; sourceTree = "<group>"; };
 		F8E2365A2BF2ECF7CD8D06A2 /* Pods-keyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-keyboard/Pods-keyboard.debug.xcconfig"; sourceTree = "<group>"; };
@@ -630,6 +633,8 @@
 				F61A93F41F61140500072967 /* PlaceHolderTextView.m */,
 				F6FDF53F1F7116D400F6943A /* EmojiTextView.h */,
 				F6FDF5401F7116D400F6943A /* EmojiTextView.m */,
+				F6622B291F72069300BD2B91 /* LvTextAttachment.h */,
+				F6622B2A1F72069300BD2B91 /* LvTextAttachment.m */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -1253,6 +1258,7 @@
 				F6FDF5411F7116D400F6943A /* EmojiTextView.m in Sources */,
 				F6195C501F5FD94500ECF1DA /* EmotionListView.m in Sources */,
 				F646A1341F5D3ABC00A26812 /* EmotionView.m in Sources */,
+				F6622B2B1F72069300BD2B91 /* LvTextAttachment.m in Sources */,
 				F6195C4D1F5F956200ECF1DA /* LvEmotionButton.m in Sources */,
 				F601EB591F42EB380071F66B /* ViewController.m in Sources */,
 				F6094AA61F5D4E990078A152 /* NSString+Emoji.m in Sources */,

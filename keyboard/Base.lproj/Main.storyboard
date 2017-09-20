@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,23 +32,53 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOW-eD-ONH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOW-eD-ONH">
                                 <rect key="frame" x="10" y="210" width="86" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="DEP-e8-Y0D"/>
+                                    <constraint firstAttribute="width" constant="86" id="nDw-j0-yu8"/>
+                                </constraints>
                                 <state key="normal" title="切换键盘"/>
                                 <connections>
                                     <action selector="clickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xXK-Rf-9fc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j25-Pd-Odg">
+                                <rect key="frame" x="190" y="210" width="169" height="37"/>
+                                <state key="normal" title="发送到服务器的文本形式"/>
+                                <connections>
+                                    <action selector="clickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OrK-qw-aCB"/>
+                                    <action selector="getServerText" destination="BYZ-38-t0r" eventType="touchUpInside" id="4eO-Mf-uR1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bg6-ML-kUi">
+                                <rect key="frame" x="10" y="267" width="355" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="QqR-3A-who"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="j25-Pd-Odg" firstAttribute="leading" secondItem="wOW-eD-ONH" secondAttribute="trailing" constant="94" id="2ie-2r-HJi"/>
+                            <constraint firstItem="wOW-eD-ONH" firstAttribute="top" secondItem="j25-Pd-Odg" secondAttribute="top" id="3bC-Qf-L6S"/>
                             <constraint firstItem="chz-Rm-Myx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="61k-S8-8dt"/>
+                            <constraint firstItem="bg6-ML-kUi" firstAttribute="leading" secondItem="chz-Rm-Myx" secondAttribute="leading" id="7IX-Pb-7tc"/>
+                            <constraint firstItem="wOW-eD-ONH" firstAttribute="top" secondItem="chz-Rm-Myx" secondAttribute="bottom" constant="20" id="HNV-hq-ofH"/>
                             <constraint firstAttribute="trailing" secondItem="chz-Rm-Myx" secondAttribute="trailing" constant="10" id="IR1-N5-K9t"/>
+                            <constraint firstItem="bg6-ML-kUi" firstAttribute="top" secondItem="wOW-eD-ONH" secondAttribute="bottom" constant="20" id="KNQ-Dz-KEO"/>
                             <constraint firstItem="chz-Rm-Myx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="NBI-Bm-vQe"/>
+                            <constraint firstItem="bg6-ML-kUi" firstAttribute="trailing" secondItem="chz-Rm-Myx" secondAttribute="trailing" id="kwe-pJ-Oje"/>
+                            <constraint firstItem="wOW-eD-ONH" firstAttribute="baseline" secondItem="j25-Pd-Odg" secondAttribute="firstBaseline" id="n5O-6d-7pb"/>
+                            <constraint firstItem="wOW-eD-ONH" firstAttribute="firstBaseline" secondItem="j25-Pd-Odg" secondAttribute="baseline" id="yaD-XA-CAb"/>
+                            <constraint firstItem="wOW-eD-ONH" firstAttribute="leading" secondItem="bg6-ML-kUi" secondAttribute="leading" id="zjf-Bf-W5d"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="realTextLabel" destination="bg6-ML-kUi" id="xpY-Lx-YvP"/>
                         <outlet property="textView" destination="chz-Rm-Myx" id="iZy-rZ-m4y"/>
                     </connections>
                 </viewController>
