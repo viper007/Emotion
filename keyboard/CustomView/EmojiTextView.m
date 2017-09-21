@@ -29,7 +29,12 @@
             [text insertAttributedString:attributedText atIndex:self.selectedRange.location];
             selectedRange = NSMakeRange(self.selectedRange.location+1, self.selectedRange.length);
         }
-        [text addAttribute:NSFontAttributeName value:self.font range:NSMakeRange(0, text.length)];
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineSpacing = 5;
+    paragraphStyle.firstLineHeadIndent = self.font.lineHeight * 2;
+    paragraphStyle.headIndent = 3;
+    [text addAttributes:@{NSFontAttributeName : self.font,NSParagraphStyleAttributeName : paragraphStyle} range:NSMakeRange(0, text.length)];
         self.attributedText = text;
         self.selectedRange = selectedRange;
 }
@@ -37,6 +42,7 @@
 - (NSString *)realText {
     NSMutableString *resultText = [NSMutableString string];
     [self.attributedText enumerateAttributesInRange:NSMakeRange(0, self.attributedText.length) options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:^(NSDictionary<NSString *,id> * _Nonnull attrs, NSRange range, BOOL * _Nonnull stop) {
+        //NSLog(@"%@---%@",attrs,NSStringFromRange(range));
         LvTextAttachment *attach = attrs[@"NSAttachment"];
         if (attach) {
             [resultText appendString:attach.emotionModel.chs];
